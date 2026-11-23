@@ -15,7 +15,7 @@ data class Alumnos(
 }
 
 
-interface FuncionesAlumnos: MutableList<Alumnos>{
+interface GestorFuncionesAlumnos{
     fun registrarAlumno(alumnos: MutableList<Alumnos>)
     fun listarAlumnos(alumnos: List<Alumnos>)
     fun calcularMedia(alumnos: List<Alumnos>): Double
