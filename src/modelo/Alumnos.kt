@@ -15,3 +15,13 @@ data class Alumnos(
 }
 
 
+interface FuncionesAlumnos: MutableList<Alumnos>{
+    fun registrarAlumno(alumnos: MutableList<Alumnos>)
+    fun listarAlumnos(alumnos: List<Alumnos>)
+    fun calcularMedia(alumnos: List<Alumnos>): Double
+    fun mostrarAprobados(alumnos: List<Alumnos>)
+    fun mostrarSuspensos(alumnos: List<Alumnos>)
+    fun buscarAlumno(alumnos: List<Alumnos>)
+    fun eliminarAlumno(alumnos: MutableList<Alumnos>)
+
+}
