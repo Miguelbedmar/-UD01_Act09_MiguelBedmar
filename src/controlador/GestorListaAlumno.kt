@@ -4,7 +4,7 @@ import modelo.Alumnos
 import modelo.GestorFuncionesAlumnos
 
 class GestorListaAlumno: GestorFuncionesAlumnos {
-    
+
     override fun registrarAlumno(alumnos: MutableList<Alumnos>) {
         TODO("Not yet implemented")
     }
