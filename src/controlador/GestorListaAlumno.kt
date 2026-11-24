@@ -36,8 +36,10 @@ class GestorListaAlumno: GestorFuncionesAlumnos {
     }
 
     override fun calcularMedia(alumnos: List<Alumnos>): Double {
-
-        TODO("Not yet implemented")
+        if(alumnos.isEmpty()){
+            showMessage("Error!  lista vacio ")
+        }
+        return alumnos.map{it.nota}.average()
     }
 
     override fun mostrarAprobados(alumnos: List<Alumnos>) {
