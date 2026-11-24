@@ -1,10 +1,10 @@
 package controlador
-import formateoMenuPrincipalContacto
+import formateoMenuPrincipalContacto //Libreria personalizada
 import modelo.Alumnos
 import modelo.GestorFuncionesAlumnos
 import java.util.Scanner
 import java.util.Locale
-import showMessage
+import showMessage // Libreria personalizada
 val sc = Scanner(System.`in`).useLocale(Locale.US)
 val ROJO = "\u001B[31m" // Creamos una variable con el nombre del color  para perzonalizar los mensajes de errores
 val RESET = "\u001B[0m"
@@ -30,7 +30,7 @@ private var gestorPrincipal: GestorFuncionesAlumnos= GestorListaAlumno()
                 if (!sc.hasNextInt()) {
                     sc.next()
                     println("${ROJO}Error: La opción seleccionada no está disponible$RESET")
-                    continue
+                    continue // salto de linea
                 }
                 val opcion = sc.nextInt()
                 when (opcion) {
@@ -59,14 +59,11 @@ private var gestorPrincipal: GestorFuncionesAlumnos= GestorListaAlumno()
                 }
 
 
-            } catch (ex: Exception) {
-                println("${ROJO} ERROR! Valor inválido detectado $RESET" + ex.message)
+            } catch (ex: IllegalArgumentException) {
+                showMessage("Error! Valor inválido detectado " )
             } catch (e: NoSuchElementException) {
-                println("${ROJO} ERROR! ERROR!: Has salido fuera del fichero $RESET " + e.message)
+               showMessage("ERROR! Has salido fuera del fichero")
                 salir = true
             }
-
         } while (!salir)
-
-
     }
