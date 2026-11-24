@@ -1,5 +1,6 @@
 package controlador
 import showMessage
+import formateoMenuPrincipalContacto
 import modelo.Alumnos
 import modelo.GestorFuncionesAlumnos
 
@@ -37,19 +38,35 @@ class GestorListaAlumno: GestorFuncionesAlumnos {
 
     override fun calcularMedia(alumnos: List<Alumnos>): Double {
         if(alumnos.isEmpty()){
-            showMessage("Error!  lista vacio ")
+            showMessage("Error!  lista vacia ")
+            return 0.0
         }
         return alumnos.map{it.nota}.average()
     }
 
     override fun mostrarAprobados(alumnos: List<Alumnos>) {
+        val ancho = 25
+        if(alumnos.isEmpty()){
+            showMessage("Error!  lista vacia ")
+            return
+        }
 
-        TODO("Not yet implemented")
+        val alumnoAprobado = alumnos.filter { it.nota >=5.0 }
+        println("Alumnos Aprobados".formateoMenuPrincipalContacto(ancho))
+        alumnoAprobado.forEach { alumno ->println("Nombre: ${alumno.nombre} | Apellido: ${alumno.apellido} | Nota: ${alumno.nota}")  }
+
     }
 
     override fun mostrarSuspensos(alumnos: List<Alumnos>) {
-        TODO("Not yet implemented")
+        val ancho = 25
+        if(alumnos.isEmpty()){
+            showMessage("Error!  lista vacia ")
+            return
+        }
+        val alumnoSuspensos = alumnos.filter { it.nota <=5.0 }
+        println("Alumnos Suspensos".formateoMenuPrincipalContacto(ancho))
 
+        alumnoSuspensos.forEach { alumno ->println("Nombre: ${alumno.nombre} | Apellido: ${alumno.apellido} | Nota: ${alumno.nota}")  }
     }
 
     override fun buscarAlumno(alumnos: List<Alumnos>) {
