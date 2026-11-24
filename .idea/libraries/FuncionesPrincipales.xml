@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="FuncionesPrincipales">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../libreriasClasesDepuradoras/Kotlin/FuncionesPrincipales.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../libreriasClasesDepuradoras/Kotlin/FuncionesPrincipales.jar!/" />
+    </SOURCES>
+  </library>
+</component>
