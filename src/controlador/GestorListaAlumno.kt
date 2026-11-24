@@ -9,12 +9,12 @@ class GestorListaAlumno: GestorFuncionesAlumnos {
     override fun registrarAlumno(alumnos: MutableList<Alumnos>) {
         try {
             // Pedimos el nombre y apellido del alumno
-            print ("Introduce el nombre del Alumno")
+            print ("Introduce el nombre del Alumno\n : ")
             val nombre = readln().trim()
-            print("Introduce el apellido del Alumno")
+            print("Introduce el apellido del Alumno\n : ")
             val apellido = readln().trim()
 
-            print("Introduce la nota del Alumno (Ejemplo : 1.5,9.5...)")
+            print("Introduce la nota del Alumno (Ejemplo : 1.5,9.5...) \n : ")
             val nota = readln().toDoubleOrNull()
             require(nota!=null){showMessage("La nota debe de ser un valor numerico")}
 

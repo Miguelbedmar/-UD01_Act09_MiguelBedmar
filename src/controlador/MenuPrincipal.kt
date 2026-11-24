@@ -34,7 +34,7 @@ private var gestorPrincipal: GestorFuncionesAlumnos= GestorListaAlumno()
                 }
                 val opcion = sc.nextInt()
                 when (opcion) {
-                    1 ->gestorPrincipal.listarAlumnos(alumnos)
+                    1 ->gestorPrincipal.registrarAlumno( alumnos)
                     2 ->gestorPrincipal.listarAlumnos(alumnos)
                     3 -> {
                         if (alumnos.isEmpty()){
