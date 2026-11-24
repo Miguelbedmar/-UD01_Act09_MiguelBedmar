@@ -70,8 +70,27 @@ class GestorListaAlumno: GestorFuncionesAlumnos {
     }
 
     override fun buscarAlumno(alumnos: List<Alumnos>) {
+        if(alumnos.isEmpty()){
+            showMessage("Error!  lista de alumnos  vacia ")
+            return
+        }
+        println("Introduce el metodo de busque  del Alumno  (nombre, apellido) ")
+        val alumnoBuscado = readln().trim()
 
-        TODO("Not yet implemented")
+        if(alumnoBuscado.isEmpty()){
+            showMessage("Error! el alumno no puede estar vacio")
+            return
+        }
+        val alumnoEncontrado = alumnos.filter {
+            it.nombre.contains(alumnoBuscado,ignoreCase = true) ||
+                    it.apellido.contains(alumnoBuscado,ignoreCase = true)
+        }
+        if( alumnoEncontrado.isEmpty()){
+            showMessage("Error!  no se ha encontrado ningun alumno ")
+        }else{
+            alumnoEncontrado.forEach { alumno ->println("${alumno.nombre} ${alumno.apellido} - Nota:${alumno.nota}")  }
+        }
+
     }
 
     override fun eliminarAlumno(alumnos: MutableList<Alumnos>) {
