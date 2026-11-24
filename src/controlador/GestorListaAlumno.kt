@@ -94,8 +94,22 @@ class GestorListaAlumno: GestorFuncionesAlumnos {
     }
 
     override fun eliminarAlumno(alumnos: MutableList<Alumnos>) {
+        if(alumnos.isEmpty()){
+            showMessage("Error!  No hay alumnos en la lista  ")
+        }
+        // Enseñamos la lista de alumnos actual
+        listarAlumnos(alumnos)
 
-        TODO("Not yet implemented")
+        println("Introduce la posicion del alumno que quieras eliminar")
+        val posicion = readln().toIntOrNull()
+
+        if(posicion!=null && posicion in 1..alumnos.size){
+            alumnos.removeAt(posicion-1)
+            println("Alumno Eliminado correctamente")
+        }else{
+            showMessage("Error posicion no válida")
+        }
+
     }
 
 }
